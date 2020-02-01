@@ -1,0 +1,18 @@
+/*Removed this as not required as specification. Used them for myself*/
+/*body {*/
+/*    font-family: sans-serif;*/
+/*    background-color: aquamarine;*/
+/*}*/
+img{
+    /*Using inherit here because there images were clustered in the carousel. */
+    width: inherit;
+
+}
+@media all and (max-width: 1024px){
+    .your-class
+}
+
+@media all and (max-width: 768px){
+    .your-class
+}
+/*I tried to make li hidden but it didn't work properly. User had to click "Reveal" button twice to function*/

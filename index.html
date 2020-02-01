@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="">
+<head>
+    <meta charset="UTF-8">
+    <title>Net Sports World</title>
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<div><h1 class = "header">Net sports World</h1></div>
+<div class="your-class">
+    <div><img src="images/1.main_5.jpg" alt="1"></div>
+    <div><img src="images/8x6_locking_1_5.jpg" alt="2"></div>
+    <div><img src="images/12x6-locking-target-sheet-1.jpg" alt="3"></div>
+    <div><img src="images/forb_black_1_1.jpg" alt="4"></div>
+    <div><img src="images/main4.jpg" alt="5"></div>
+</div>
+
+<div id="mainbody">
+    <h4>Questions</h4>
+<!--Question 1------------------------------------------------------------------>
+
+    <ul>We have a variable, defined as $string, which is a string 200 characters long, and we want to display only 40 characters in a snippet. What approach would you take to achieve this?
+
+        <li id="answer1" style="display: none">
+            <pre> function showFortyChar($text){
+    if ($text === null){// checks if there is an input for not.
+        return "No text entered";
+    }
+    elseif(strlen($text) > 200){// checks the length of the text.
+        return "The entered text is too big. Text length is ". strlen($text);
+    }
+    else{
+
+        $string = wordwrap($text, 200, "\n", true);
+        strlen($string);
+        $rest = substr($string, 0,40);
+        return $rest;   // return the visible 40 characters.
+
+    }
+}
+$text = "The text should fit within 200 character long......................................................................................................................................................";
+echo showFortyChar($text);</pre></li>
+
+
+
+    </ul>
+    <button type="button" onclick="hideAnswers('answer1')">Reveal Answer</button>
+
+<!--Question 2------------------------------------------------------------------>
+
+    <ul>$string contains letters and numbers, the numbers aren't relevant to us, so we want to remove all of the numbers from the string. What approach would you take to achieve this?
+
+        <li id="answer2" style="display: none">
+            <pre> function removeNumbers($text){
+    if ($text === null){
+        return "No text entered";
+    }
+    else{
+
+        $words = preg_replace('/\d/', '', $text ); // removes all numeric value from the string.
+        strlen($words);
+
+        return $words;
+    }
+}
+$text = "The text should fit within 200 character ...";
+echo removeNumbers($text);</pre></li>
+
+
+
+    </ul>
+    <button type="button" onclick="hideAnswers('answer2')">Reveal Answer</button>
+
+
+    <!--Question 3------------------------------------------------------------------>
+    <ul>$string has been encrypted using a basic encryption method. We know that all occurrences of the letters 'a, r, d' were replaced with 'c, m, e' respectively; we need to replace these letters with the respective letters. What approach would you take to achieve this?
+        <li id="answer3" style="display: none">
+            <pre> function deceipherText($text){
+    if ($text === null){
+        return "No text entered";
+    }
+    else{
+        $words = str_replace(["a", "r", "d"], ["c", "m", "e"], $text); // replaces a with c, r with m and d with e
+
+        return $words;
+    }
+}
+$text = " a === c, r === m, d === e  ";
+
+echo deceipherText($text);</pre></li>
+
+
+
+    </ul>
+    <button type="button" onclick="hideAnswers('answer3')">Reveal Answer</button>
+
+    <!--Question 4------------------------------------------------------------------>
+    <ul>We have a variable, defined as $string, which is a string 200 characters long, and we want to display only 40 characters in a snippet. What approach would you take to achieve this?
+
+        <li id="answer4" style="display: none">
+            <pre> function extractDomain($text){
+    if ($text === null){
+        return "No text entered";
+    }
+    else{
+        $url = parse_url($text);   // parse url
+        $domain = $url['host'];     // extract host
+        $domainName = str_replace('www.','',$domain); // remove wwww. and return string
+        return $domainName;
+    }
+}
+$text = "https://www.google.com";
+
+echo extractDomain($text);</pre></li>
+
+
+
+    </ul>
+    <button type="button" onclick="hideAnswers('answer4')">Reveal Answer</button>
+
+    <!--Question 5------------------------------------------------------------------>
+    <ul>We have a variable, defined as $string, which is a string 200 characters long, and we want to display only 40 characters in a snippet. What approach would you take to achieve this?
+
+        <li id="answer5" style="display: none">
+            <pre> function extractDomain($text){
+    if ($text === null){
+        return "No text entered";
+    }
+    else{
+        $url = parse_url($text, PHP_URL_QUERY);
+        parse_str($url,$params);
+
+
+        $variablesinfo = $params['name']. $params['value'];
+
+
+            return $url;   // returns query which shows parameters passed in the url.
+//        return $variables;    // this could be used to only extract the parameter values.
+    }
+}
+$text = "http://www.google.com/page?name=admin&value=12345";
+
+echo extractDomain($text); </pre></li>
+
+
+
+    </ul>
+    <button type="button" onclick="hideAnswers('answer5')">Reveal Answer</button>
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<script src="js/slick.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/init.js"></script>
+
+</body>
+</html>
